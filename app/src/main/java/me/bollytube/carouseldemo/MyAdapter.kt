@@ -26,6 +26,7 @@ class MyAdapter(
 
     class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         fun bindView(myItem: MyItem) {
+            itemView.my_title.text = myItem.title
             Glide.with(itemView.context).load(myItem.thumbnail).into(itemView.my_iv)
         }
     }

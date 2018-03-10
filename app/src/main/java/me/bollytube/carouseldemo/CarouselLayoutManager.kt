@@ -13,6 +13,11 @@ open class CarouselLayoutManager(
     private val mShrinkAmount = 0.15f
     private val mShrinkDistance = 0.9f
 
+    override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
+        scrollVerticallyBy(0, recycler, state)
+        super.onLayoutChildren(recycler, state)
+    }
+
     override fun scrollHorizontallyBy(dx: Int, recycler: RecyclerView.Recycler?, state: RecyclerView.State?): Int {
         val orientation = orientation
         if (orientation == LinearLayoutManager.HORIZONTAL) {
@@ -59,5 +64,4 @@ open class CarouselLayoutManager(
             return 0
         }
     }
-
 }

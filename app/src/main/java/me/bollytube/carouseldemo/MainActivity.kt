@@ -8,6 +8,10 @@ import android.support.v7.widget.LinearSnapHelper
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
+import android.support.v4.view.ViewCompat.setScaleY
+import android.support.v4.view.ViewCompat.setScaleX
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,26 +34,10 @@ class MainActivity : AppCompatActivity() {
         val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(my_rv)
 
-        my_rv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-
-                if (RecyclerView.SCROLL_STATE_IDLE == newState) {
-                    val completeVisibleItem = mLayoutManager.findFirstCompletelyVisibleItemPosition()
-                    log("completeVisibleItem: $completeVisibleItem")
-                    if (completeVisibleItem >= 0) {
-                        log(mutableList[completeVisibleItem].title)
-                        my_title.text = mutableList[completeVisibleItem].title
-                    }
-                }
-            }
-        })
-
         loadData()
 
         click_me.setOnClickListener {
-//            mLayoutManager.scrollToPosition(3)
+//            mLayoutManager.scrollToPosition(5)
             my_rv.scrollToPosition(5)
         }
     }
@@ -59,9 +47,5 @@ class MainActivity : AppCompatActivity() {
             mutableList.add(MyItem("Title $i", "http://via.placeholder.com/250x200"))
         }
         mAdapter.notifyDataSetChanged()
-    }
-
-    fun log(message: String) {
-        Log.d("Carouse", message)
     }
 }
