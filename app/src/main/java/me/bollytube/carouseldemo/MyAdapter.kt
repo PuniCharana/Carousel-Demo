@@ -9,8 +9,9 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.my_item.view.*
 
 class MyAdapter(
-        private val mutableList: MutableList<MyItem>
+        private val mutableList: ArrayList<MyItem>
 ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.my_item, parent, false)
         return MyViewHolder(view)

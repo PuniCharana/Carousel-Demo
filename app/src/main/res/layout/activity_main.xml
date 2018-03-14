@@ -6,14 +6,21 @@
     android:orientation="vertical"
     tools:context="me.bollytube.carouseldemo.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/my_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Infinite Carousel"
+        android:id="@+id/btn_infinite_carousel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:text="Scroll to 6"
-        android:id="@+id/click_me"
+        android:text="Background To Foreground Carousel"
+        android:id="@+id/btn_back_foreground_carousel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Foreground To Background Carousel"
+        android:id="@+id/btn_foreground_to_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
